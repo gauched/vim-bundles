@@ -1,0 +1,54 @@
+# Project specific
+bundle.disabled
+
+# General
+Logs
+logs
+_svn
+temp
+
+# Windows
+*.lnk
+Thumbs.db
+
+# Visual Studio
+bin
+obj
+VSMacros80
+*.cache
+*.suo
+*.user
+*.webinfo
+
+# Resharper
+_ReSharper.*
+*.resharper
+*.resharper.user
+
+# SASS
+.sass-cache
+
+# Bundler
+.bundle
+vendor/bundle
+
+# rcov generated
+coverage
+coverage.data
+
+# rdoc generated
+rdoc
+
+# yard generated
+doc
+.yardoc
+
+# jeweler generated
+pkg
+
+# For MacOS:
+.DS_Store
+
+# For vim:
+*.swp
+.tags
