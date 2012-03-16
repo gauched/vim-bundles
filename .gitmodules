@@ -28,3 +28,27 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/snipmate.vim"]
+	path = bundle/snipmate.vim
+	url = http://github.com/msanders/snipmate.vim
+[submodule "bundle/tabman.vim"]
+	path = bundle/tabman.vim
+	url = http://github.com/kien/tabman.vim.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = http://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = http://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = http://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = http://github.com/hallison/vim-markdown.git
+[submodule "bundle/vim-session"]
+	path = bundle/vim-session
+	url = http://github.com/xolox/vim-session.git
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = http://github.com/mattn/zencoding-vim.git
