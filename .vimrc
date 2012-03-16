@@ -210,15 +210,6 @@ endif
 	map <LocalLeader>ls :SessionList<CR>
 
 
-	" --- ShowMarks
-	"let g:showmarks_enable = 0
-	let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.'\""
-	let g:showmarks_textlower = "\t"
-	let g:showmarks_textupper = "\t"
-	let g:showmarks_textother = "\t"
-	let g:showmarks_ignore_type = "hqm"
-
-
 	" --- snipMate
 	let g:snips_author = 'Colby Hart'
 		function! Unfold()
@@ -227,35 +218,11 @@ endif
 		endfunction
 
 
-	" --- Specky
-	let g:speckyRunRdocKey = "<LocalLeader>'r"
-	let g:speckySpecSwitcherKey = "<LocalLeader>'x"
-	let g:speckyRunSpecKey = "<LocalLeader>'s"
-	"let g:speckyBannerKey = "<LocalLeader>'b"
-	"let g:speckyQuoteSwitcherKey = "<LocalLeader>''"
-	"let g:speckyRunSpecCmd = "spec -fs"
-	"let g:speckyRunRdocCmd = "fri -L -f plain"
-	"let g:speckyWindowType = 2
-
-
 	" --- SqlFormatter
 	let g:sqlutil_align_comma = 1
 	let g:sqlutil_keyword_case = '\L'
 	map <LocalLeader>sf :SQLUFormatter<CR>
 	let g:xml_syntax_folding = 1
-
-
-	" --- VimWiki
-	map <LocalLeader>vws :VimwikiAll2HTML<CR><CR>
-	map <LocalLeader>vv :VimwikiIndex<CR>
-	let g:vimwiki_use_mouse = 1
-	let g:vimwiki_list = [{'path': '~/vimwiki/wiki/', 'path_html': '~/vimwiki/html/', 'html_header': '~/vimwiki/template/header.tpl', 'html_footer': '~/vimwiki/template/footer.tpl'}]
-	let g:vimwiki_camel_case = 0
-	au BufRead *.wiki set foldlevel=0
-
-
-	" --- YankRing
-	:nnoremap <silent> <LocalLeader>yr :YRShow<CR>
 
 
 
