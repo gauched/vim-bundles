@@ -83,12 +83,6 @@ au BufRead,BufNewFile *.rb set tags=.tags,c:/Users/chart/Code/ruby/.tags
 au BufNewFile,BufRead *.vb setf vb
 au BufRead,BufNewFile *.vm  setf velocity
 
-au BufRead *.otl set foldlevel=0
-au BufEnter *.otl color vo_light
-au BufLeave *.otl exe "color " . g:OriginalColorScheme
-
-au BufNewFile,BufRead *.wiki set tw=78
-
 let ruby_fold=2
 map <LocalLeader>fh :set ft=html<CR>
 map <LocalLeader>fj :set ft=javascript<CR>
