@@ -156,7 +156,7 @@ endif
 
 
 	" --- acp AutoComplPop
-	let g:acp_enableAtStartup = 0
+	let g:acp_enableAtStartup = 1
 	let g:acp_behaviorSnipmateLength = 1
 
 
