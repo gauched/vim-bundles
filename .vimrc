@@ -44,15 +44,12 @@ fun! Trimy()
 	exe '%s!\n\n*\%$!!e'
 	exe "nohl"
 endfun
+map <LocalLeader>trim :call Trimy()<CR>
 
 map <LocalLeader>" :s!"!'!g<CR>
 map <LocalLeader>' :s!'!"!g<CR>
 map <LocalLeader>) :s!)\\|(! !g<CR>
 
-map <LocalLeader>te :tabedit<CR>
-
-map <LocalLeader>trim :call Trimy()<CR>
-"map <LocalLeader>ind :/^\s* /<CR>
 map + zo
 map = zc
 map ; :
@@ -64,7 +61,7 @@ noremap <F7> <ESC>:set spell!<CR>
 noremap! <F7> <ESC>:set spell!<CR>
 vmap  d
 nmap S :%s!
-vmap S :s!
+vmap S :%s!
 
 
 " --- File browsing
@@ -75,22 +72,38 @@ inoremap <C-S> <ESC>:w<CR>
 
 " --- File types
 
-filetype on
-filetype plugin on
-au BufNewFile,BufRead *.ahk setf ahk
-au BufNewFile,BufRead *.log setf log
-au BufRead,BufNewFile *.rb set tags=.tags,c:/Users/chart/Code/ruby/.tags
-au BufNewFile,BufRead *.vb setf vb
-au BufRead,BufNewFile *.vm  setf velocity
+	filetype on
+	filetype plugin on
+	syntax enable
 
-let ruby_fold=2
-map <LocalLeader>fh :set ft=html<CR>
-map <LocalLeader>fj :set ft=javascript<CR>
-map <LocalLeader>fo :set ft=vo_base<CR>
-map <LocalLeader>fr :set ft=ruby<CR>
-map <LocalLeader>fs :set ft=sql<CR>
-map <LocalLeader>fv :set ft=vb.net<CR>
-syntax enable
+
+	" Ruby
+
+	let ruby_fold=2
+	au BufRead,BufNewFile *.rb set tags=.tags
+
+	" Wrap current word in #{}
+	map <LocalLeader>," ebi#{<ESC>ea}
+
+	function! LogFix()
+		silent! %s!\([Ll]og\.\w*\)(\(.*\))!\1 \2
+		silent! %s/\([Ll]og\.\w* .*\)\$!\.to_s/\1 #{$!}
+	endfunction
+
+
+	" Others
+
+	au BufNewFile,BufRead *.ahk setf ahk
+	au BufNewFile,BufRead *.log setf log
+	au BufNewFile,BufRead *.vb setf vb
+	au BufRead,BufNewFile *.vm  setf velocity
+
+	map <LocalLeader>fh :set ft=html<CR>
+	map <LocalLeader>fj :set ft=javascript<CR>
+	map <LocalLeader>fr :set ft=ruby<CR>
+	map <LocalLeader>fs :set ft=sql<CR>
+	map <LocalLeader>fv :set ft=vb.net<CR>
+
 
 set autochdir
 set autoindent
@@ -156,7 +169,7 @@ endif
 
 
 	" --- acp AutoComplPop
-	let g:acp_enableAtStartup = 1
+	let g:acp_enableAtStartup = 0
 	let g:acp_behaviorSnipmateLength = 1
 
 
@@ -187,13 +200,6 @@ endif
 	map <LocalLeader>ntc :NERDTreeClose<CR>
 	map <LocalLeader>nto :NERDTree<CR>
 	map <LocalLeader>ntw :NERDTree c:/Users/chart/Work<CR>
-
-
-	" --- Ruby
-	function! LogFix()
-		silent! %s!\([Ll]og\.\w*\)(\(.*\))!\1 \2
-		silent! %s/\([Ll]og\.\w* .*\)\$!\.to_s/\1 #{$!}
-	endfunction
 
 
    " --- Session
@@ -249,6 +255,8 @@ endif
 	" --- Windows Mappings and Settings.
 	if has("win32")
 
+		au BufRead,BufNewFile *.rb set tags=.tags,c:/Users/chart/Work/Code/ruby/.tags
+
 		"let g:GetLatestVimScripts_wget='c:/bin/curl.exe'
 		"let g:GetLatestVimScripts_options = '-U : --proxy-ntlm --proxy 192.168.0.200:8088 -o'
 
@@ -261,10 +269,10 @@ endif
 		map <LocalLeader>HC :%!csstidy - --sort_properties=true<CR>
 		map <LocalLeader>HX :%!tidy -i -q -xml -w 80<CR>:%s/^  <\(\w\)/\r  <\1/e<CR>:%s/^  <!/\r  <!/e<CR>:nohl<CR>
 
-	fun! RubyCheck()
-		exe "silent !ruby -c % > " . $TMP . "\\rubycheck.txt"
-		exe "silent split $TMP/rubycheck.txt"
-	endfun
+		fun! RubyCheck()
+			exe "silent !ruby -c % > " . $TMP . "\\rubycheck.txt"
+			exe "silent split $TMP/rubycheck.txt"
+		endfun
 		map <LocalLeader>RC :call RubyCheck()<CR>
 
 		set dir=$TMP
@@ -274,7 +282,7 @@ endif
 			map <LocalLeader>bw :set columns=180<CR>:set lines=66<CR>
 			map <LocalLeader>sw :set columns=90<CR>:set lines=40<CR>
 
-			set columns=96
+			set columns=109
 			set lines=66
 			set guifont=Consolas:h9
 			set guioptions+=c
