@@ -125,7 +125,6 @@ set autoread
 set backspace=2
 set cryptmethod=blowfish
 set cmdheight=2
-"set colorcolumn=+1
 set confirm
 set cpoptions+=J
 set cursorline
@@ -141,9 +140,8 @@ set laststatus=2
 set linebreak
 set nocompatible
 set nowrapscan
-"set shell=bash
 set sessionoptions=buffers,curdir,folds,tabpages,winsize
-set shiftwidth=3
+set shiftwidth=4
 set shiftround
 set showbreak=…
 set hl=@:Text
@@ -152,9 +150,9 @@ set showmatch
 set showmode
 set smartindent
 set smarttab
-set softtabstop=3
+set softtabstop=4
 set statusline=%<%f%h%m%r%=\ \ \ \ \ \ \ \ \ \ %y\ \ \ (%{&ff})\ \ \ %l:%c\ "there's a space before this comment.
-set tabstop=3
+set tabstop=4
 set timeoutlen=1500
 set wildchar=<Tab>
 set wildmenu
@@ -267,6 +265,7 @@ endif
 		map! <D-t> <C-t>
 
 		set dir=/tmp
+		"set shell=bash
 
 		map <LocalLeader>HT :%!tidy -f /tmp/tidy.txt -config ~/.tidy<CR>:vsplit /tmp/tidy.txt<CR>:q
 
