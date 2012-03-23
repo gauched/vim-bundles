@@ -1,17 +1,19 @@
 " --- .vimrc ---
 
 
-" --- Windows Mappings and Settings.
-if has("win32")
-	set runtimepath=w:/.vim,$VIMRUNTIME
-endif
-
-
 " --- Global settings independent of plugins or OS.
 
 " Pathogen load
 
 set fileformats=dos,unix " Some bundles are saved with windows line endings.
+
+" Setup autoload/pathogen.vim
+if has("mac") || has("macunix")
+	set runtimepath=~/.vim,$VIMRUNTIME
+endif
+if has("win32")
+	set runtimepath=w:/.vim,$VIMRUNTIME
+endif
 
 call pathogen#infect()
 
@@ -249,7 +251,6 @@ endif
 	let g:xml_syntax_folding = 1
 
 
-
 " --- Operation System Specific
 
 
@@ -268,6 +269,7 @@ endif
 		set dir=/tmp
 
 		map <LocalLeader>HT :%!tidy -f /tmp/tidy.txt -config ~/.tidy<CR>:vsplit /tmp/tidy.txt<CR>:q
+
 
 		if has("gui_running")
 			set antialias
