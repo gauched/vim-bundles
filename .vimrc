@@ -10,10 +10,21 @@ endif
 " --- Global settings independent of plugins or OS.
 
 " Pathogen load
-call pathogen#infect()
-syntax on
 
-set background=light
+set fileformats=dos,unix " Some bundles are saved with windows line endings.
+
+call pathogen#infect()
+
+
+" Color Scheme
+
+if has('gui_running')
+	set background=light
+else
+	let g:solarized_termcolors=16
+	set background=dark
+endif
+
 colorscheme solarized
 
 
@@ -72,9 +83,10 @@ inoremap <C-S> <ESC>:w<CR>
 
 " --- File types
 
-	filetype on
-	filetype plugin on
-	syntax enable
+filetype on
+filetype plugin on
+syntax enable
+syntax on
 
 
 	" Ruby
@@ -117,7 +129,6 @@ set cpoptions+=J
 set cursorline
 "set encoding=utf-8
 set equalalways
-set fileformats=dos,unix
 set foldnestmax=2
 set hidden
 set hlsearch
@@ -156,6 +167,19 @@ if version >= 700
 	au InsertEnter * hi Cursor guibg=green
 	au InsertLeave * hi StatusLine term=reverse guibg=orange
 	au InsertLeave * hi Cursor guibg=orange
+endif
+
+
+" GUI Specific
+
+if has("gui_running")
+	set guioptions+=c
+	set guioptions-=L
+	set guioptions-=T
+
+	set guitablabel=%t
+
+	set splitright
 endif
 
 
@@ -231,6 +255,7 @@ endif
 
 	" --- Mac Mappings and Settings.
 	if has("mac") || has("macunix")
+		
 		map <D-n> <C-n>
 		map! <D-n> <C-n>
 		map <D-o> <C-O>
@@ -239,15 +264,16 @@ endif
 		map! <D-s> <C-s>
 		map <D-t> <C-t>
 		map! <D-t> <C-t>
-		map <LocalLeader>HT :%!tidy -f /tmp/tidy.txt -config ~/.tidy<CR>:vsplit /tmp/tidy.txt<CR>:q
+
 		set dir=/tmp
-		let g:GetLatestVimScripts_wget='/opt/local/bin/wget'
+
+		map <LocalLeader>HT :%!tidy -f /tmp/tidy.txt -config ~/.tidy<CR>:vsplit /tmp/tidy.txt<CR>:q
+
 		if has("gui_running")
 			set antialias
+
 			set columns=100
 			set lines=65
-			set guioptions+=c
-			set splitright
 		endif
 	endif
 
@@ -255,63 +281,21 @@ endif
 	" --- Windows Mappings and Settings.
 	if has("win32")
 
-		au BufRead,BufNewFile *.rb set tags=.tags,c:/Users/chart/Work/Code/ruby/.tags
-
-		"let g:GetLatestVimScripts_wget='c:/bin/curl.exe'
-		"let g:GetLatestVimScripts_options = '-U : --proxy-ntlm --proxy 192.168.0.200:8088 -o'
-
-	fun! Tidy()
-		exe "silent %!tidy -f " . $TMP . "\\tidy.txt -config h:/.tidy"
-		exe "silent vsplit $TMP/tidy.txt"
-	endfun
-
-		map <LocalLeader>HT :call Tidy()<CR>
-		map <LocalLeader>HC :%!csstidy - --sort_properties=true<CR>
-		map <LocalLeader>HX :%!tidy -i -q -xml -w 80<CR>:%s/^  <\(\w\)/\r  <\1/e<CR>:%s/^  <!/\r  <!/e<CR>:nohl<CR>
-
-		fun! RubyCheck()
-			exe "silent !ruby -c % > " . $TMP . "\\rubycheck.txt"
-			exe "silent split $TMP/rubycheck.txt"
-		endfun
-		map <LocalLeader>RC :call RubyCheck()<CR>
-
-		set dir=$TMP
-		set splitbelow
-
-		if has("gui_running")
-			map <LocalLeader>bw :set columns=180<CR>:set lines=66<CR>
-			map <LocalLeader>sw :set columns=90<CR>:set lines=40<CR>
-
-			set columns=109
-			set lines=66
-			set guifont=Consolas:h9
-			set guioptions+=c
-			set guioptions-=T
-			set guioptions-=L
-			set guitablabel=%t
-		endif
-
 		" Backspace in Visual mode deletes selection
 		vnoremap <BS> d
 
-		" CTRL-X and SHIFT-Del are Cut
+		" CTRL-X are Cut
 		vnoremap <C-X> "+x
-		vnoremap <S-Del> "+x
-		"map! <C-X> <ESC>"+xa
 
-		" CTRL-C and CTRL-Insert are Copy
+		" CTRL-C are Copy
 		vnoremap <C-C> "+y
-		vnoremap <C-Insert> "+y
-		noremap! <C-Insert> <ESC>"+ya
 
-		" CTRL-V and SHIFT-Insert are Paste
+		" CTRL-V are Paste
 		map <C-V>        "+gP
-		map <S-Insert>        "+gP
 		noremap! <C-V>    <ESC>"+gPa
-
 		cmap <C-V>        <C-R>+
-		cmap <S-Insert>        <C-R>+
 
+		" CTRL-A is Select All
 		noremap <C-A> gggH<C-O>G
 		inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
 		cnoremap <C-A> <C-C>gggH<C-O>G
@@ -320,5 +304,31 @@ endif
 		noremap <C-Tab> <C-W>w
 		inoremap <C-Tab> <C-O><C-W>w
 		cnoremap <C-Tab> <C-C><C-W>w
+
+		set dir=$TMP
+
+		au BufRead,BufNewFile *.rb set tags=.tags,c:/Users/chart/Work/Code/ruby/.tags
+
+		fun! Tidy()
+			exe "silent %!tidy -f " . $TMP . "\\tidy.txt -config h:/.tidy"
+			exe "silent vsplit $TMP/tidy.txt"
+		endfun
+		map <LocalLeader>HT :call Tidy()<CR>
+		map <LocalLeader>HX :%!tidy -i -q -xml -w 80<CR>:%s/^  <\(\w\)/\r  <\1/e<CR>:%s/^  <!/\r  <!/e<CR>:nohl<CR>
+		map <LocalLeader>HC :%!csstidy - --sort_properties=true<CR>
+
+		fun! RubyCheck()
+			exe "silent !ruby -c % > " . $TMP . "\\rubycheck.txt"
+			exe "silent split $TMP/rubycheck.txt"
+		endfun
+		map <LocalLeader>RC :call RubyCheck()<CR>
+
+
+		if has("gui_running")
+			set columns=109
+			set lines=66
+
+			set guifont=Consolas:h9
+		endif
 
 	endif
