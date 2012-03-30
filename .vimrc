@@ -226,15 +226,15 @@ endif
 	map <LocalLeader>ntw :NERDTree c:/Users/chart/Work<CR>
 
 
-   " --- Session
-   let g:session_autoload = 'yes'
-   let g:session_autosave = 'no'
+    " --- Session
+    let g:session_autoload = 'yes'
+    let g:session_autosave = 'no'
 
 	" --- Session Manager
 	map <LocalLeader>ls :SessionList<CR>
 
 
-	" --- snipMate
+    " --- snipMate
 	let g:snips_author = 'Colby Hart'
 		function! Unfold()
 			set foldlevel=100
@@ -249,12 +249,18 @@ endif
 	let g:xml_syntax_folding = 1
 
 
+	" --- Syntastic
+	let g:syntastic_check_on_open=1
+    let g:syntastic_auto_loc_list=1
+    let g:syntastic_loc_list_height=3
+
+
 " --- Operation System Specific
 
 
 	" --- Mac Mappings and Settings.
 	if has("mac") || has("macunix")
-		
+
 		map <D-n> <C-n>
 		map! <D-n> <C-n>
 		map <D-o> <C-O>
@@ -317,13 +323,6 @@ endif
 		map <LocalLeader>HT :call Tidy()<CR>
 		map <LocalLeader>HX :%!tidy -i -q -xml -w 80<CR>:%s/^  <\(\w\)/\r  <\1/e<CR>:%s/^  <!/\r  <!/e<CR>:nohl<CR>
 		map <LocalLeader>HC :%!csstidy - --sort_properties=true<CR>
-
-		fun! RubyCheck()
-			exe "silent !ruby -c % > " . $TMP . "\\rubycheck.txt"
-			exe "silent split $TMP/rubycheck.txt"
-		endfun
-		map <LocalLeader>RC :call RubyCheck()<CR>
-
 
 		if has("gui_running")
 			set columns=109
