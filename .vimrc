@@ -255,6 +255,14 @@ endif
     let g:syntastic_loc_list_height=3
 
 
+	" --- Tagbar
+	nmap <F8> :TagbarToggle<CR>
+
+
+	" --- vim-rails
+	let g:rails_ctags_arguments='--languages=-javascript --exclude=vendor'
+
+
 " --- Operation System Specific
 
 
@@ -314,7 +322,7 @@ endif
 
 		set dir=$TMP
 
-		au BufRead,BufNewFile *.rb set tags=.tags,c:/Users/chart/Work/Code/ruby/.tags
+		au BufRead,BufNewFile *.rb set tags=tags,c:/Users/chart/Work/Code/ruby/tags
 
 		fun! Tidy()
 			exe "silent %!tidy -f " . $TMP . "\\tidy.txt -config h:/.tidy"
