@@ -263,6 +263,10 @@ endif
 	let g:rails_ctags_arguments='--languages=-javascript --exclude=vendor'
 
 
+	" --- vim-rake
+	let g:rake_ctags_arguments='--languages=-javascript --exclude=vendor'
+
+
 " --- Operation System Specific
 
 
