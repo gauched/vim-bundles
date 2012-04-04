@@ -64,3 +64,21 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = ../../tpope/vim-repeat.git
+[submodule "bundle/html5.vim"]
+	path = bundle/html5.vim
+	url = ../../othree/html5.vim.git
+[submodule "bundle/mustache.vim"]
+	path = bundle/mustache.vim
+	url = ../../juvenn/mustache.vim
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = ../../majutsushi/tagbar.git
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = ../../vim-scripts/taglist.vim.git
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = ../../tpope/vim-endwise.git
+[submodule "bundle/matchit.zip"]
+	path = bundle/matchit.zip
+	url = ../../vim-scripts/matchit.zip.git
