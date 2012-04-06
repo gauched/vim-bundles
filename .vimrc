@@ -32,7 +32,6 @@ colorscheme solarized
 
 " --- Abbreviations (imaps plugin)
 
-iab wuh (I don't know what this means. -cjh)
 imap <A--> –
 
 
@@ -92,9 +91,7 @@ syntax on
 	let ruby_fold=2
 	au BufRead,BufNewFile *.rb set tags=.tags
 
-	map <LocalLeader>r" :s!"!'!g<CR>
-	map <LocalLeader>r' :s!'!"!g<CR>
-	map <LocalLeader>r) :s!)\\|(! !g<CR>
+	map <LocalLeader>,) :s!)\\|(! !g<CR>
 
 	" Wrap current word in #{}
 	map <LocalLeader>," ebi#{<ESC>ea}
