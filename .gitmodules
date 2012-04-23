@@ -82,3 +82,6 @@
 [submodule "bundle/matchit.zip"]
 	path = bundle/matchit.zip
 	url = ../../vim-scripts/matchit.zip.git
+[submodule "bundle/vim-pathogen"]
+	path = bundle/vim-pathogen
+	url = ../../tpope/vim-pathogen.git
