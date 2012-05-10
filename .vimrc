@@ -12,7 +12,7 @@ if has("mac") || has("macunix")
 	set runtimepath=~/.vim,$VIMRUNTIME
 endif
 if has("win32")
-	set runtimepath=w:/.vim,$VIMRUNTIME
+	set runtimepath=w:/.vim,$VIMRUNTIME,w:/.vim/bundle/snipmate.vim/after
 endif
 
 
@@ -150,7 +150,7 @@ set showmode
 set smartindent
 set smarttab
 set softtabstop=4
-set statusline=%<%f%h%m%r%=\ \ \ \ \ \ \ \ \ \ %y\ \ \ (%{&ff})\ \ \ %l:%c\ "there's a space before this comment.
+set statusline=%<%f%h%m%r%=\ \ \ \ %-30{tagbar#currenttag('\|%s\|','')}\ \ \ \ ft=%Y\ \ \ ff=%{&ff}\ \ \ %5l:%2c\ "there's a space before this comment.
 set tabstop=4
 set timeoutlen=1500
 set wildchar=<Tab>
@@ -255,7 +255,15 @@ endif
 
 
 	" --- Tagbar
-	nmap <F8> :TagbarToggle<CR>
+	let g:tagbar_autofocus = 1
+	let g:tagbar_autoshowtag = 1
+	let g:tagbar_width = 30
+	nmap <F9> :TagbarToggle<CR>
+
+
+	" --- Taglist
+	let Tlist_GainFocus_On_ToggleOpen = 1
+	nnoremap <silent> <F8> :TlistToggle<CR>
 
 
 	" --- vim-rails
