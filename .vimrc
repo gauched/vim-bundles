@@ -65,6 +65,7 @@ map = zc
 map ; :
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
+inoremap <C-,> <C-X>
 map gs ]s
 map gS [s
 noremap <F7> <ESC>:set spell!<CR>
@@ -213,16 +214,14 @@ endif
 	map <LocalLeader>lg :LustyJuggler<CR>
 
 
-	" --- Nerd Commenter
+	" --- NERD Commenter
 	let g:NERDShutUp = 1
 
 
-	" --- Nerd Tree
+	" --- NERD Tree
 	let g:NERDTreeShowBookmarks = 1
 	let g:NERDTreeMapOpenInTab = 0
-	map <LocalLeader>ntc :NERDTreeClose<CR>
-	map <LocalLeader>nto :NERDTree<CR>
-	map <LocalLeader>ntw :NERDTree c:/Users/chart/Work<CR>
+	map <LocalLeader>ntt :NERDTreeToggle<CR>
 
 
     " --- Session
@@ -349,5 +348,8 @@ endif
 
 			set guifont=Consolas:h9
 		endif
+
+		" --- NERDTree
+		map <LocalLeader>ntw :NERDTree c:/Users/chart/Work<CR>
 
 	endif
