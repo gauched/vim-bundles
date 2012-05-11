@@ -97,6 +97,11 @@ syntax enable
 syntax on
 
 
+	" Markdown
+	
+	map <LocalLeader>mid Yp:.s! !!g<CR>:.s!#*!{: #!<CR>:.s!$!}!<CR><ESC>
+
+
 	" Ruby
 
 	let ruby_fold=2
