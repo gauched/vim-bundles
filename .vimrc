@@ -11,6 +11,7 @@ set fileformats=dos,unix " Some bundles are saved with windows line endings.
 if has("mac") || has("macunix")
 	set runtimepath=~/.vim,$VIMRUNTIME
 endif
+
 if has("win32")
 	set runtimepath=w:/.vim,$VIMRUNTIME,w:/.vim/bundle/snipmate.vim/after
 endif
@@ -24,12 +25,19 @@ call pathogen#infect()
 
 if has('gui_running')
 	set background=light
+	colorscheme solarized
 else
-	let g:solarized_termcolors=16
-	set background=dark
-endif
+	if has("mac") || has("macunix")
+		let g:solarized_termcolors=256
+		set background=light
+		colorscheme solarized
+	endif
 
-colorscheme solarized
+	if has("win32")
+		let g:solarized_termcolors=16
+		colorscheme elflord
+	endif
+endif
 
 
 " --- Abbreviations (imaps plugin)
@@ -234,10 +242,10 @@ endif
 
     " --- snipMate
 	let g:snips_author = 'Colby Hart'
-		function! Unfold()
-			set foldlevel=100
-			return ''
-		endfunction
+	function! Unfold()
+		set foldlevel=100
+		return ''
+	endfunction
 
 
 	" --- SqlFormatter
