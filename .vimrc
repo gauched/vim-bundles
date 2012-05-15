@@ -269,6 +269,7 @@ endif
 	" --- Tagbar
 	let g:tagbar_autofocus = 1
 	let g:tagbar_autoshowtag = 1
+	let g:tagbar_sort = 0
 	let g:tagbar_width = 30
 	nmap <F9> :TagbarToggle<CR>
 
