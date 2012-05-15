@@ -271,12 +271,14 @@ endif
 	let g:tagbar_autoshowtag = 1
 	let g:tagbar_sort = 0
 	let g:tagbar_width = 30
-	nmap <F9> :TagbarToggle<CR>
+	imap <silent> <F9> <C-[>:TagbarToggle<CR>
+	nmap <silent> <F9> :TagbarToggle<CR>
 
 
 	" --- Taglist
 	let Tlist_GainFocus_On_ToggleOpen = 1
-	nnoremap <silent> <F8> :TlistToggle<CR>
+	imap <silent> <F8> <C-[>:TlistToggle<CR>
+	nmap <silent> <F8> :TlistToggle<CR>
 
 
 	" --- vim-rails
