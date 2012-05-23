@@ -108,6 +108,8 @@ syntax on
 	au BufRead,BufNewFile *.rb set tags=.tags
 
 	map <LocalLeader>,) :s!)\\|(! !g<CR>
+	
+	map <LocalLeader>rg :vimgrep /Bug:\\|Note:\\|Todo:/j ./* bin/** config/** features/** lib/** spec/** \| copen
 
 	" Wrap current word in #{}
 	map <LocalLeader>," ebi#{<ESC>ea}
