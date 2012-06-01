@@ -156,7 +156,7 @@ set linebreak
 set nocompatible
 set nowrapscan
 set sessionoptions=buffers,curdir,folds,tabpages,winsize
-set shiftwidth=4
+set shiftwidth=2
 set shiftround
 set showbreak=…
 set hl=@:Text
@@ -165,9 +165,9 @@ set showmatch
 set showmode
 set smartindent
 set smarttab
-set softtabstop=4
+set softtabstop=2
 set statusline=%<%f%h%m%r%=\ \ \ \ %-30{tagbar#currenttag('\|%s\|','')}\ \ \ \ ft=%Y\ \ \ ff=%{&ff}\ \ \ %5l:%2c\ "there's a space before this comment.
-set tabstop=4
+set tabstop=8
 set timeoutlen=1500
 set wildchar=<Tab>
 set wildmenu
