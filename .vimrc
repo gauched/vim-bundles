@@ -145,6 +145,7 @@ set cpoptions+=J
 set cursorline
 "set encoding=utf-8
 set equalalways
+set expandtab
 set foldnestmax=2
 set hidden
 set hlsearch
