@@ -9,11 +9,11 @@ set fileformats=dos,unix " Some bundles are saved with windows line endings.
 
 " Setup autoload/pathogen.vim
 if has("mac") || has("macunix")
-	set runtimepath=~/.vim,$VIMRUNTIME
+  set runtimepath=~/.vim,$VIMRUNTIME
 endif
 
 if has("win32")
-	set runtimepath=w:/.vim,$VIMRUNTIME,w:/.vim/bundle/snipmate.vim/after
+  set runtimepath=w:/.vim,$VIMRUNTIME,w:/.vim/bundle/snipmate.vim/after
 endif
 
 
@@ -24,19 +24,19 @@ call pathogen#infect()
 " Color Scheme
 
 if has('gui_running')
-	set background=light
-	colorscheme solarized
+  set background=light
+  colorscheme solarized
 else
-	if has("mac") || has("macunix")
-		let g:solarized_termcolors=256
-		set background=light
-		colorscheme solarized
-	endif
+  if has("mac") || has("macunix")
+    let g:solarized_termcolors=256
+    set background=light
+    colorscheme solarized
+  endif
 
-	if has("win32")
-		let g:solarized_termcolors=16
-		colorscheme elflord
-	endif
+  if has("win32")
+    let g:solarized_termcolors=16
+    colorscheme elflord
+  endif
 endif
 
 
@@ -62,9 +62,9 @@ let maplocalleader=','
 noremap <ESC> :nohl<CR> <ESC>
 
 fun! Trimy()
-	exe '%s!\s\+$!!e'
-	exe '%s!\n\n*\%$!!e'
-	exe "nohl"
+  exe '%s!\s\+$!!e'
+  exe '%s!\n\n*\%$!!e'
+  exe "nohl"
 endfun
 map <LocalLeader>trim :call Trimy()<CR>
 
@@ -97,41 +97,41 @@ syntax enable
 syntax on
 
 
-	" Markdown
-	
-	map <LocalLeader>mid Yp:.s! !!g<CR>:.s!#*!{: #!<CR>:.s!$!}!<CR><ESC>
+  " Markdown
+  
+  map <LocalLeader>mid Yp:.s! !!g<CR>:.s!#*!{: #!<CR>:.s!$!}!<CR><ESC>
 
 
-	" Ruby
+  " Ruby
 
-	let ruby_fold=2
-	au BufRead,BufNewFile *.rb set tags=.tags
+  let ruby_fold=2
+  au BufRead,BufNewFile *.rb set tags=.tags
 
-	map <LocalLeader>,) :s!)\\|(! !g<CR>
-	
-	map <LocalLeader>rg :vimgrep /Bug:\\|Note:\\|Todo:/j ./* bin/** config/** features/** lib/** spec/** \| copen
+  map <LocalLeader>,) :s!)\\|(! !g<CR>
+  
+  map <LocalLeader>rg :vimgrep /Bug:\\|Note:\\|Todo:/j ./* bin/** config/** features/** lib/** spec/** \| copen
 
-	" Wrap current word in #{}
-	map <LocalLeader>," ebi#{<ESC>ea}
+  " Wrap current word in #{}
+  map <LocalLeader>," ebi#{<ESC>ea}
 
-	function! LogFix()
-		silent! %s!\([Ll]og\.\w*\)(\(.*\))!\1 \2
-		silent! %s/\([Ll]og\.\w* .*\)\$!\.to_s/\1 #{$!}
-	endfunction
+  function! LogFix()
+    silent! %s!\([Ll]og\.\w*\)(\(.*\))!\1 \2
+    silent! %s/\([Ll]og\.\w* .*\)\$!\.to_s/\1 #{$!}
+  endfunction
 
 
-	" Others
+  " Others
 
-	au BufNewFile,BufRead *.ahk setf ahk
-	au BufNewFile,BufRead *.log setf log
-	au BufNewFile,BufRead *.vb setf vb
-	au BufRead,BufNewFile *.vm  setf velocity
+  au BufNewFile,BufRead *.ahk setf ahk
+  au BufNewFile,BufRead *.log setf log
+  au BufNewFile,BufRead *.vb setf vb
+  au BufRead,BufNewFile *.vm  setf velocity
 
-	map <LocalLeader>fh :set ft=html<CR>
-	map <LocalLeader>fj :set ft=javascript<CR>
-	map <LocalLeader>fr :set ft=ruby<CR>
-	map <LocalLeader>fs :set ft=sql<CR>
-	map <LocalLeader>fv :set ft=vb.net<CR>
+  map <LocalLeader>fh :set ft=html<CR>
+  map <LocalLeader>fj :set ft=javascript<CR>
+  map <LocalLeader>fr :set ft=ruby<CR>
+  map <LocalLeader>fs :set ft=sql<CR>
+  map <LocalLeader>fv :set ft=vb.net<CR>
 
 
 set autochdir
@@ -179,196 +179,196 @@ set viminfo+=!
 " Change the status bar color based on the mode.
 set laststatus=2
 if version >= 700
-	au InsertEnter * hi StatusLine term=reverse guibg=lightgreen
-	au InsertEnter * hi Cursor guibg=green
-	au InsertLeave * hi StatusLine term=reverse guibg=orange
-	au InsertLeave * hi Cursor guibg=orange
+  au InsertEnter * hi StatusLine term=reverse guibg=lightgreen
+  au InsertEnter * hi Cursor guibg=green
+  au InsertLeave * hi StatusLine term=reverse guibg=orange
+  au InsertLeave * hi Cursor guibg=orange
 endif
 
 
 " GUI Specific
 
 if has("gui_running")
-	set guioptions+=c
-	set guioptions-=L
-	set guioptions-=T
+  set guioptions+=c
+  set guioptions-=L
+  set guioptions-=T
 
-	set guitablabel=%t
+  set guitablabel=%t
 
-	set splitright
+  set splitright
 endif
 
 
 " --- Plugin specific
 
-	let g:DrChipTopLvlMenu= "Plugin."
+  let g:DrChipTopLvlMenu= "Plugin."
 
 
-	" --- Align
-	map <Leader>ah :Align "=>"<CR>
+  " --- Align
+  map <Leader>ah :Align "=>"<CR>
 
 
-	" --- acp AutoComplPop
-	let g:acp_enableAtStartup = 0
-	let g:acp_behaviorSnipmateLength = 1
+  " --- acp AutoComplPop
+  let g:acp_enableAtStartup = 0
+  let g:acp_behaviorSnipmateLength = 1
 
 
-	" --- IndentConsistencyCop
-	noremap <F3> <ESC>:IndentConsistencyCop<CR>
-	noremap! <F3> <ESC>:IndentConsistencyCop<CR>
+  " --- IndentConsistencyCop
+  noremap <F3> <ESC>:IndentConsistencyCop<CR>
+  noremap! <F3> <ESC>:IndentConsistencyCop<CR>
 
 
-	" --- Lusty File Explorer
-	map <silent> <LocalLeader>lf :LustyFilesystemExplorer<CR>
-	map <silent> <LocalLeader>lr :LustyFilesystemExplorerFromHere<CR>
-	noremap <LocalLeader>tt <ESC>:tabedit<CR>:LustyFilesystemExplorer<CR>
-	noremap <LocalLeader>nn <ESC>:tabnew<CR>
-	set wildignore=*_svn,*.dll,*.exe,*.msi,*.zip,*.com,*.gif,*.ico,*.jpg,*.png,*.xpm
+  " --- Lusty File Explorer
+  map <silent> <LocalLeader>lf :LustyFilesystemExplorer<CR>
+  map <silent> <LocalLeader>lr :LustyFilesystemExplorerFromHere<CR>
+  noremap <LocalLeader>tt <ESC>:tabedit<CR>:LustyFilesystemExplorer<CR>
+  noremap <LocalLeader>nn <ESC>:tabnew<CR>
+  set wildignore=*_svn,*.dll,*.exe,*.msi,*.zip,*.com,*.gif,*.ico,*.jpg,*.png,*.xpm
 
 
-	" --- Lusty Juggler
-	map <LocalLeader>lg :LustyJuggler<CR>
+  " --- Lusty Juggler
+  map <LocalLeader>lg :LustyJuggler<CR>
 
 
-	" --- NERD Commenter
-	let g:NERDShutUp = 1
+  " --- NERD Commenter
+  let g:NERDShutUp = 1
 
 
-	" --- NERD Tree
-	let g:NERDTreeShowBookmarks = 1
-	let g:NERDTreeMapOpenInTab = 0
-	map <LocalLeader>ntt :NERDTreeToggle<CR>
+  " --- NERD Tree
+  let g:NERDTreeShowBookmarks = 1
+  let g:NERDTreeMapOpenInTab = 0
+  map <LocalLeader>ntt :NERDTreeToggle<CR>
 
 
     " --- Session
     let g:session_autoload = 'yes'
     let g:session_autosave = 'no'
 
-	" --- Session Manager
-	map <LocalLeader>ls :SessionList<CR>
+  " --- Session Manager
+  map <LocalLeader>ls :SessionList<CR>
 
 
     " --- snipMate
-	let g:snips_author = 'Colby Hart'
-	function! Unfold()
-		set foldlevel=100
-		return ''
-	endfunction
+  let g:snips_author = 'Colby Hart'
+  function! Unfold()
+    set foldlevel=100
+    return ''
+  endfunction
 
 
-	" --- SqlFormatter
-	let g:sqlutil_align_comma = 1
-	let g:sqlutil_keyword_case = '\L'
-	map <LocalLeader>sf :SQLUFormatter<CR>
-	let g:xml_syntax_folding = 1
+  " --- SqlFormatter
+  let g:sqlutil_align_comma = 1
+  let g:sqlutil_keyword_case = '\L'
+  map <LocalLeader>sf :SQLUFormatter<CR>
+  let g:xml_syntax_folding = 1
 
 
-	" --- Syntastic
-	let g:syntastic_check_on_open=1
+  " --- Syntastic
+  let g:syntastic_check_on_open=1
     let g:syntastic_auto_loc_list=1
     let g:syntastic_loc_list_height=3
 
 
-	" --- Tagbar
-	let g:tagbar_autofocus = 1
-	let g:tagbar_autoshowtag = 1
-	let g:tagbar_sort = 0
-	let g:tagbar_width = 30
-	imap <silent> <F9> <C-[>:TagbarToggle<CR>
-	nmap <silent> <F9> :TagbarToggle<CR>
+  " --- Tagbar
+  let g:tagbar_autofocus = 1
+  let g:tagbar_autoshowtag = 1
+  let g:tagbar_sort = 0
+  let g:tagbar_width = 30
+  imap <silent> <F9> <C-[>:TagbarToggle<CR>
+  nmap <silent> <F9> :TagbarToggle<CR>
 
 
-	" --- Taglist
-	let Tlist_GainFocus_On_ToggleOpen = 1
-	imap <silent> <F8> <C-[>:TlistToggle<CR>
-	nmap <silent> <F8> :TlistToggle<CR>
+  " --- Taglist
+  let Tlist_GainFocus_On_ToggleOpen = 1
+  imap <silent> <F8> <C-[>:TlistToggle<CR>
+  nmap <silent> <F8> :TlistToggle<CR>
 
 
-	" --- vim-rails
-	let g:rails_ctags_arguments='--languages=-javascript --exclude=vendor'
+  " --- vim-rails
+  let g:rails_ctags_arguments='--languages=-javascript --exclude=vendor'
 
 
-	" --- vim-rake
-	let g:rake_ctags_arguments='--languages=-javascript --exclude=vendor'
+  " --- vim-rake
+  let g:rake_ctags_arguments='--languages=-javascript --exclude=vendor'
 
 
 " --- Operation System Specific
 
 
-	" --- Mac Mappings and Settings.
-	if has("mac") || has("macunix")
+  " --- Mac Mappings and Settings.
+  if has("mac") || has("macunix")
 
-		map <D-n> <C-n>
-		map! <D-n> <C-n>
-		map <D-o> <C-O>
-		map! <D-o> <C-O>
-		map <D-s> <C-s>
-		map! <D-s> <C-s>
-		map <D-t> <C-t>
-		map! <D-t> <C-t>
+    map <D-n> <C-n>
+    map! <D-n> <C-n>
+    map <D-o> <C-O>
+    map! <D-o> <C-O>
+    map <D-s> <C-s>
+    map! <D-s> <C-s>
+    map <D-t> <C-t>
+    map! <D-t> <C-t>
 
-		set dir=/tmp
-		"set shell=bash
+    set dir=/tmp
+    "set shell=bash
 
-		map <LocalLeader>HT :%!tidy -f /tmp/tidy.txt -config ~/.tidy<CR>:vsplit /tmp/tidy.txt<CR>:q
-
-
-		if has("gui_running")
-			set antialias
-
-			set columns=100
-			set lines=65
-		endif
-	endif
+    map <LocalLeader>HT :%!tidy -f /tmp/tidy.txt -config ~/.tidy<CR>:vsplit /tmp/tidy.txt<CR>:q
 
 
-	" --- Windows Mappings and Settings.
-	if has("win32")
+    if has("gui_running")
+      set antialias
 
-		" Backspace in Visual mode deletes selection
-		vnoremap <BS> d
+      set columns=100
+      set lines=65
+    endif
+  endif
 
-		" CTRL-X are Cut
-		vnoremap <C-X> "+x
 
-		" CTRL-C are Copy
-		vnoremap <C-C> "+y
+  " --- Windows Mappings and Settings.
+  if has("win32")
 
-		" CTRL-V are Paste
-		map <C-V>        "+gP
-		noremap! <C-V>    <ESC>"+gPa
-		cmap <C-V>        <C-R>+
+    " Backspace in Visual mode deletes selection
+    vnoremap <BS> d
 
-		" CTRL-A is Select All
-		noremap <C-A> gggH<C-O>G
-		inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-		cnoremap <C-A> <C-C>gggH<C-O>G
+    " CTRL-X are Cut
+    vnoremap <C-X> "+x
 
-		" CTRL-Tab is Next window
-		noremap <C-Tab> <C-W>w
-		inoremap <C-Tab> <C-O><C-W>w
-		cnoremap <C-Tab> <C-C><C-W>w
+    " CTRL-C are Copy
+    vnoremap <C-C> "+y
 
-		set dir=$TMP
+    " CTRL-V are Paste
+    map <C-V>        "+gP
+    noremap! <C-V>    <ESC>"+gPa
+    cmap <C-V>        <C-R>+
 
-		au BufRead,BufNewFile *.rb set tags=tags,c:/Users/chart/Work/Code/ruby/tags
+    " CTRL-A is Select All
+    noremap <C-A> gggH<C-O>G
+    inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+    cnoremap <C-A> <C-C>gggH<C-O>G
 
-		fun! Tidy()
-			exe "silent %!tidy -f " . $TMP . "\\tidy.txt -config h:/.tidy"
-			exe "silent vsplit $TMP/tidy.txt"
-		endfun
-		map <LocalLeader>HT :call Tidy()<CR>
-		map <LocalLeader>HX :%!tidy -i -q -xml -w 80<CR>:%s/^  <\(\w\)/\r  <\1/e<CR>:%s/^  <!/\r  <!/e<CR>:nohl<CR>
-		map <LocalLeader>HC :%!csstidy - --sort_properties=true<CR>
+    " CTRL-Tab is Next window
+    noremap <C-Tab> <C-W>w
+    inoremap <C-Tab> <C-O><C-W>w
+    cnoremap <C-Tab> <C-C><C-W>w
 
-		if has("gui_running")
-			set columns=109
-			set lines=66
+    set dir=$TMP
 
-			set guifont=Consolas:h9
-		endif
+    au BufRead,BufNewFile *.rb set tags=tags,c:/Users/chart/Work/Code/ruby/tags
 
-		" --- NERDTree
-		map <LocalLeader>ntw :NERDTree c:/Users/chart/Work<CR>
+    fun! Tidy()
+      exe "silent %!tidy -f " . $TMP . "\\tidy.txt -config h:/.tidy"
+      exe "silent vsplit $TMP/tidy.txt"
+    endfun
+    map <LocalLeader>HT :call Tidy()<CR>
+    map <LocalLeader>HX :%!tidy -i -q -xml -w 80<CR>:%s/^  <\(\w\)/\r  <\1/e<CR>:%s/^  <!/\r  <!/e<CR>:nohl<CR>
+    map <LocalLeader>HC :%!csstidy - --sort_properties=true<CR>
 
-	endif
+    if has("gui_running")
+      set columns=109
+      set lines=66
+
+      set guifont=Consolas:h9
+    endif
+
+    " --- NERDTree
+    map <LocalLeader>ntw :NERDTree c:/Users/chart/Work<CR>
+
+  endif
