@@ -129,6 +129,7 @@ syntax on
 
   map <LocalLeader>fh :set ft=html<CR>
   map <LocalLeader>fj :set ft=javascript<CR>
+  map <LocalLeader>fm :set ft=markdown<CR>
   map <LocalLeader>fr :set ft=ruby<CR>
   map <LocalLeader>fs :set ft=sql<CR>
   map <LocalLeader>fv :set ft=vb.net<CR>
@@ -270,16 +271,31 @@ endif
 
 
   " --- Tagbar
-  let g:tagbar_autofocus = 1
+  "let g:tagbar_autofocus = 1
   let g:tagbar_autoshowtag = 1
   let g:tagbar_sort = 0
   let g:tagbar_width = 30
   imap <silent> <F9> <C-[>:TagbarToggle<CR>
   nmap <silent> <F9> :TagbarToggle<CR>
 
+  " Todo: Add CoffeeScript support.
+
+  let g:tagbar_type_markdown = {
+          \ 'ctagstype' : 'markdown',
+          \ 'kinds' : [
+                  \ 'h:Heading_L1',
+                  \ 'i:Heading_L2',
+                  \ 'k:Heading_L3'
+          \ ]
+  \ }
+
+  " Open Tagbar with supported files
+  autocmd VimEnter * nested :call tagbar#autoopen(1)
+
 
   " --- Taglist
-  let Tlist_GainFocus_On_ToggleOpen = 1
+  "let Tlist_GainFocus_On_ToggleOpen = 1
+  let Tlist_WinWidth = 40
   imap <silent> <F8> <C-[>:TlistToggle<CR>
   nmap <silent> <F8> :TlistToggle<CR>
 
