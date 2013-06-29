@@ -21,6 +21,37 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 
+" Vundle Setup
+
+"set nocompatible               " be iMproved
+"filetype off                   " required!
+
+"set rtp+=w:/.vim/bundle/vundle/
+"call vundle#rc()
+
+"" let Vundle manage Vundle
+"" required! 
+"Bundle 'gmarik/vundle'
+
+"" My Bundles here:
+""
+"" original repos on github
+""Bundle 'tpope/vim-fugitive'
+""Bundle 'Lokaltog/vim-easymotion'
+""Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+""Bundle 'tpope/vim-rails.git'
+"" vim-scripts repos
+""Bundle 'L9'
+""Bundle 'FuzzyFinder'
+"" non github repos
+""Bundle 'git://git.wincent.com/command-t.git'
+""
+"Bundle ''
+
+
+"filetype plugin indent on     " required!
+
+
 " Color Scheme
 
 if has('gui_running')
@@ -136,7 +167,6 @@ syntax on
 
 
 set autochdir
-set autoindent
 set autoread
 set backspace=2
 set cryptmethod=blowfish
@@ -146,9 +176,9 @@ set cpoptions+=J
 set cursorline
 "set encoding=utf-8
 set equalalways
-set expandtab
 set foldnestmax=2
 set hidden
+set history=100
 set hlsearch
 set ignorecase
 set incsearch
@@ -157,24 +187,31 @@ set laststatus=2
 set linebreak
 set nocompatible
 set nowrapscan
+set scrolloff=6
 set sessionoptions=buffers,curdir,folds,tabpages,winsize
-set shiftwidth=2
-set shiftround
 set showbreak=…
 set hl=@:Text
 set showcmd
 set showmatch
 set showmode
-set smartindent
-set smarttab
-set softtabstop=2
 set statusline=%<%f%h%m%r%=\ \ \ \ %-30{tagbar#currenttag('\|%s\|','')}\ \ \ \ ft=%Y\ \ \ ff=%{&ff}\ \ \ %5l:%2c\ "there's a space before this comment.
-set tabstop=8
 set timeoutlen=1500
 set wildchar=<Tab>
 set wildmenu
 set whichwrap=b,h,l,<,>,[,]
 set viminfo+=!
+
+
+" ============ Indentation ============ 
+
+set autoindent
+set expandtab
+set shiftwidth=2
+set shiftround
+set smartindent
+set smarttab
+set softtabstop=2
+set tabstop=8
 
 
 " Change the status bar color based on the mode.
@@ -298,6 +335,7 @@ endif
   let Tlist_WinWidth = 40
   imap <silent> <F8> <C-[>:TlistToggle<CR>
   nmap <silent> <F8> :TlistToggle<CR>
+  nmap <C-F8> :TlistAddFilesRecursive
 
 
   " --- vim-rails
