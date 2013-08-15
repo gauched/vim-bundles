@@ -1,5 +1,7 @@
 # Project specific
 bundle.disabled
+en.latin1.add
+en.latin1.add.spl
 
 # General
 Logs
