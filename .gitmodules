@@ -19,9 +19,6 @@
 [submodule "bundle/vim-rake"]
 	path = bundle/vim-rake
 	url = http://github.com/tpope/vim-rake.git
-[submodule "bundle/IndentConsistencyCop"]
-	path = bundle/IndentConsistencyCop
-	url = http://github.com/vim-scripts/IndentConsistencyCop.git
 [submodule "bundle/lusty"]
 	path = bundle/lusty
 	url = http://github.com/sjbach/lusty.git
@@ -49,9 +46,6 @@
 [submodule "bundle/vim-session"]
 	path = bundle/vim-session
 	url = http://github.com/xolox/vim-session.git
-[submodule "bundle/zencoding-vim"]
-	path = bundle/zencoding-vim
-	url = http://github.com/mattn/zencoding-vim.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = ../../vim-ruby/vim-ruby.git
@@ -85,3 +79,33 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = ../../tpope/vim-pathogen.git
+[submodule "bundle\\Align"]
+	path = bundle\\Align
+	url = http://github.com/vim-scripts/Align.git
+[submodule "bundle\\AutoComplPop"]
+	path = bundle\\AutoComplPop
+	url = http://github.com/vim-scripts/AutoComplPop
+[submodule "bundle\\cream-showinvisibles"]
+	path = bundle\\cream-showinvisibles
+	url = http://github.com/vim-scripts/cream-showinvisibles.git
+[submodule "bundle\\emmet-vim"]
+	path = bundle\\emmet-vim
+	url = http://github.com/mattn/emmet-vim.git
+[submodule "bundle\\sessionman.vim"]
+	path = bundle\\sessionman.vim
+	url = http://github.com/vim-scripts/sessionman.vim.git
+[submodule "bundle\\SQLUtilities"]
+	path = bundle\\SQLUtilities
+	url = http://github.com/vim-scripts/SQLUtilities.git
+[submodule "bundle\\vim-json"]
+	path = bundle\\vim-json
+	url = http://github.com/elzr/vim-json.git
+[submodule "bundle\\vim-misc"]
+	path = bundle\\vim-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "bundle\\YankRing.vim"]
+	path = bundle\\YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "bundle\\ZoomWin"]
+	path = bundle\\ZoomWin
+	url = http://github.com/vim-scripts/ZoomWin.git
