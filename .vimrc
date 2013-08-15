@@ -30,7 +30,7 @@ call pathogen#infect()
 "call vundle#rc()
 
 "" let Vundle manage Vundle
-"" required! 
+"" required!
 "Bundle 'gmarik/vundle'
 
 "" My Bundles here:
@@ -129,7 +129,7 @@ syntax on
 
 
   " Markdown
-  
+
   map <LocalLeader>mid Yp:.s! !!g<CR>:.s!#*!{: #!<CR>:.s!$!}!<CR><ESC>
 
 
@@ -139,7 +139,7 @@ syntax on
   au BufRead,BufNewFile *.rb set tags=.tags
 
   map <LocalLeader>,) :s!)\\|(! !g<CR>
-  
+
   map <LocalLeader>rg :vimgrep /Bug:\\|Note:\\|Todo:/j ./* bin/** config/** features/** lib/** spec/** \| copen
 
   " Wrap current word in #{}
@@ -202,7 +202,7 @@ set whichwrap=b,h,l,<,>,[,]
 set viminfo+=!
 
 
-" ============ Indentation ============ 
+" ============ Indentation ============
 
 set autoindent
 set expandtab
@@ -249,11 +249,6 @@ endif
   " --- acp AutoComplPop
   let g:acp_enableAtStartup = 0
   let g:acp_behaviorSnipmateLength = 1
-
-
-  " --- IndentConsistencyCop
-  noremap <F3> <ESC>:IndentConsistencyCop<CR>
-  noremap! <F3> <ESC>:IndentConsistencyCop<CR>
 
 
   " --- Lusty File Explorer
@@ -344,6 +339,10 @@ endif
 
   " --- vim-rake
   let g:rake_ctags_arguments='--languages=-javascript --exclude=vendor'
+
+  " --- YankRing
+  imap <silent> <F11> <C-[>:YRShow<CR>
+  nnoremap <silent> <F11> :YRShow<CR>
 
 
 " --- Operation System Specific
