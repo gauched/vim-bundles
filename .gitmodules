@@ -1,111 +1,108 @@
-[submodule "bundle/vim-autoclose"]
-	path = bundle/vim-autoclose
-	url = http://github.com/Townk/vim-autoclose.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = http://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = http://github.com/scrooloose/nerdtree.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
-[submodule "bundle/vim-bundler"]
-	path = bundle/vim-bundler
-	url = http://github.com/tpope/vim-bundler.git
-[submodule "bundle/vim-rails"]
-	path = bundle/vim-rails
-	url = http://github.com/tpope/vim-rails.git
-[submodule "bundle/vim-rake"]
-	path = bundle/vim-rake
-	url = http://github.com/tpope/vim-rake.git
-[submodule "bundle/lusty"]
-	path = bundle/lusty
-	url = http://github.com/sjbach/lusty.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = http://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = http://github.com/msanders/snipmate.vim
-[submodule "bundle/tabman.vim"]
-	path = bundle/tabman.vim
-	url = http://github.com/kien/tabman.vim.git
-[submodule "bundle/tlib_vim"]
-	path = bundle/tlib_vim
-	url = http://github.com/tomtom/tlib_vim.git
-[submodule "bundle/vim-coffee-script"]
-	path = bundle/vim-coffee-script
-	url = http://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
-	url = http://github.com/Lokaltog/vim-easymotion.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = http://github.com/hallison/vim-markdown.git
-[submodule "bundle/vim-session"]
-	path = bundle/vim-session
-	url = http://github.com/xolox/vim-session.git
-[submodule "bundle/vim-ruby"]
-	path = bundle/vim-ruby
-	url = ../../vim-ruby/vim-ruby.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = ../../tpope/vim-surround.git
-[submodule "vim-pathogen source"]
-	path = vim-pathogen source
-	url = ../../tpope/vim-pathogen.git
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
-	url = ../../tpope/vim-repeat.git
+[submodule "bundle/Align"]
+	path = bundle/Align
+	url = ../../vim-scripts/Align.git
+[submodule "bundle/AutoComplPop"]
+	path = bundle/AutoComplPop
+	url = ../../vim-scripts/AutoComplPop
+[submodule "bundle/cream-showinvisibles"]
+	path = bundle/cream-showinvisibles
+	url = ../../vim-scripts/cream-showinvisibles.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = ../../mattn/emmet-vim.git
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = ../../othree/html5.vim.git
+[submodule "bundle/lusty"]
+	path = bundle/lusty
+	url = ../../sjbach/lusty.git
+[submodule "bundle/matchit.zip"]
+	path = bundle/matchit.zip
+	url = ../../vim-scripts/matchit.zip.git
 [submodule "bundle/mustache.vim"]
 	path = bundle/mustache.vim
 	url = ../../juvenn/mustache.vim
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = ../../scrooloose/nerdcommenter.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = ../../scrooloose/nerdtree.git
+[submodule "bundle/sessionman.vim"]
+	path = bundle/sessionman.vim
+	url = ../../vim-scripts/sessionman.vim.git
+[submodule "bundle/snipmate.vim"]
+	path = bundle/snipmate.vim
+	url = ../../msanders/snipmate.vim
+[submodule "bundle/SQLUtilities"]
+	path = bundle/SQLUtilities
+	url = ../../vim-scripts/SQLUtilities.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = ../../scrooloose/syntastic.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = ../../majutsushi/tagbar.git
 [submodule "bundle/taglist.vim"]
 	path = bundle/taglist.vim
 	url = ../../vim-scripts/taglist.vim.git
+[submodule "bundle/tabman.vim"]
+	path = bundle/tabman.vim
+	url = ../../kien/tabman.vim.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = ../../tomtom/tlib_vim.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = ../../Townk/vim-autoclose.git
+[submodule "bundle/vim-bundler"]
+	path = bundle/vim-bundler
+	url = ../../tpope/vim-bundler.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = ../../altercation/vim-colors-solarized.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = ../../kchmck/vim-coffee-script.git
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = ../../Lokaltog/vim-easymotion.git
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = ../../tpope/vim-endwise.git
-[submodule "bundle/matchit.zip"]
-	path = bundle/matchit.zip
-	url = ../../vim-scripts/matchit.zip.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = ../../elzr/vim-json.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = ../../hallison/vim-markdown.git
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = ../../xolox/vim-misc.git
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = ../../tpope/vim-pathogen.git
-[submodule "bundle\\Align"]
-	path = bundle\\Align
-	url = http://github.com/vim-scripts/Align.git
-[submodule "bundle\\AutoComplPop"]
-	path = bundle\\AutoComplPop
-	url = http://github.com/vim-scripts/AutoComplPop
-[submodule "bundle\\cream-showinvisibles"]
-	path = bundle\\cream-showinvisibles
-	url = http://github.com/vim-scripts/cream-showinvisibles.git
-[submodule "bundle\\emmet-vim"]
-	path = bundle\\emmet-vim
-	url = http://github.com/mattn/emmet-vim.git
-[submodule "bundle\\sessionman.vim"]
-	path = bundle\\sessionman.vim
-	url = http://github.com/vim-scripts/sessionman.vim.git
-[submodule "bundle\\SQLUtilities"]
-	path = bundle\\SQLUtilities
-	url = http://github.com/vim-scripts/SQLUtilities.git
-[submodule "bundle\\vim-json"]
-	path = bundle\\vim-json
-	url = http://github.com/elzr/vim-json.git
-[submodule "bundle\\vim-misc"]
-	path = bundle\\vim-misc
-	url = https://github.com/xolox/vim-misc.git
-[submodule "bundle\\YankRing.vim"]
-	path = bundle\\YankRing.vim
-	url = https://github.com/vim-scripts/YankRing.vim.git
-[submodule "bundle\\ZoomWin"]
-	path = bundle\\ZoomWin
-	url = http://github.com/vim-scripts/ZoomWin.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = ../../tpope/vim-rails.git
+[submodule "bundle/vim-rake"]
+	path = bundle/vim-rake
+	url = ../../tpope/vim-rake.git
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = ../../tpope/vim-repeat.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = ../../vim-ruby/vim-ruby.git
+[submodule "bundle/vim-session"]
+	path = bundle/vim-session
+	url = ../../xolox/vim-session.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = ../../tpope/vim-surround.git
+[submodule "bundle/YankRing.vim"]
+	path = bundle/YankRing.vim
+	url = ../../vim-scripts/YankRing.vim.git
+[submodule "bundle/ZoomWin"]
+	path = bundle/ZoomWin
+	url = ../../vim-scripts/ZoomWin.git
