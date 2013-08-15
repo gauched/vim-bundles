@@ -273,11 +273,9 @@ endif
   map <LocalLeader>ntt :NERDTreeToggle<CR>
 
 
-    " --- Session
-    let g:session_autoload = 'yes'
-    let g:session_autosave = 'no'
-
   " --- Session Manager
+  let g:session_autoload = 'yes'
+  let g:session_autosave = 'no'
   map <LocalLeader>ls :SessionList<CR>
 
 
@@ -289,7 +287,7 @@ endif
   endfunction
 
 
-  " --- SqlFormatter
+  " --- SQLUtilities
   let g:sqlutil_align_comma = 1
   let g:sqlutil_keyword_case = '\L'
   map <LocalLeader>sf :SQLUFormatter<CR>
@@ -339,6 +337,7 @@ endif
 
   " --- vim-rake
   let g:rake_ctags_arguments='--languages=-javascript --exclude=vendor'
+
 
   " --- YankRing
   imap <silent> <F11> <C-[>:YRShow<CR>
